@@ -94,7 +94,7 @@ function renderCard(app, index) {
   }
 
   return `
-      <a class="app-card" href="/${app.slug}/">
+      <a class="app-card" href="${app.slug}/">
         <div class="app-card__number">${number}</div>
         <div class="app-card__content">
           <p class="app-card__status"><span></span> Ready to open</p>
