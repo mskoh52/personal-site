@@ -4,6 +4,9 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import process from "node:process";
+import { loadPackageEnv } from "./load-env.mjs";
+
+loadPackageEnv(process.env.TARGET || "local");
 
 const projectRoot = process.cwd();
 const outputDirectory = path.join(projectRoot, "public");
