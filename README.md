@@ -1,17 +1,16 @@
 # Static App Hub
 
-A small Netlify project that builds two existing GitHub-hosted static web apps and presents them from one shared index page. Each source repository is cloned during the Netlify build, its `build.js` script is run, and its complete `dist` directory is published under a dedicated path.
+A small static index that builds two existing GitHub-hosted static web apps and presents them from one shared index page. Each source repository is cloned during build, its `build.js` script is run, and its complete `dist` directory is published under a dedicated path.
 
 ## Technologies
 
 - Node.js 22 build script
 - Static HTML and CSS
-- Netlify build and hosting
 - GitHub repositories as application sources
 
 ## Configure the applications
 
-The default entries live in `sites.config.json`. Change each app's `name`, `description`, and `slug` to match the projects, then add these environment variables in Netlify:
+The default entries live in `sites.config.json`. Change each app's `name`, `description`, and `slug` to match the projects, then add these environment variables:
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
@@ -24,7 +23,7 @@ The default entries live in `sites.config.json`. Change each app's `name`, `desc
 | `APP_ONE_BUILD_COMMAND` | No | Overrides the default `node build.js` command |
 | `APP_TWO_BUILD_COMMAND` | No | Overrides the default `node build.js` command |
 
-For public repositories, use an HTTPS clone URL such as `https://github.com/organization/repository.git`. Private repositories need Git credentials available to the Netlify build environment; do not store credentials in `sites.config.json`.
+For public repositories, use an HTTPS clone URL such as `https://github.com/organization/repository.git`. Private repositories need Git credentials; do not store credentials in `sites.config.json`.
 
 After deployment, the hub is available at `/`, while the applications are served at `/app-one/` and `/app-two/` unless their slugs are changed.
 

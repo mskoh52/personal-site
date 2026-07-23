@@ -2,7 +2,7 @@
 
 ## Architecture
 
-This is a framework-free static Netlify project. `scripts/build.mjs` is the only build entry point. It reads `sites.config.json`, clones configured application repositories into a temporary directory, installs their dependencies when a recognized package manifest is present, runs each app build, and copies each `dist` directory into `public/<slug>`.
+This is a framework-free static project. `scripts/build.mjs` is the only build entry point. It reads `sites.config.json`, clones configured application repositories into a temporary directory, installs their dependencies when a recognized package manifest is present, runs each app build, and copies each `dist` directory into `public/<slug>`.
 
 The same script renders `src/index.html` into `public/index.html`. It replaces the application card and online-count placeholders based on build results. `src/styles.css` contains all visual styling and is copied to the publish directory.
 
@@ -12,13 +12,12 @@ The same script renders `src/index.html` into `public/index.html`. It replaces t
 - `sites.config.json`: app labels, descriptions, slugs, and environment-variable mappings
 - `src/index.html`: landing-page template
 - `src/styles.css`: landing-page styles
-- `netlify.toml`: Netlify build and publish settings
 - `public/`: generated output; never edit or commit it
 
 ## Conventions
 
 - Keep the project dependency-free unless a concrete requirement justifies a package.
-- Keep repository URLs and credentials out of committed files; read repository locations from Netlify environment variables.
+- Keep repository URLs and credentials out of committed files; read repository locations from environment variables.
 - Use lowercase, hyphenated slugs because they become public URL paths.
 - Preserve accessible focus states, semantic HTML, responsive layouts, and reduced-motion support when editing the landing page.
 - Treat each source app's `dist` directory as immutable build output and copy it in full.
