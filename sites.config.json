@@ -1,0 +1,20 @@
+[
+  {
+    "name": "First app",
+    "description": "Open the first static web application.",
+    "slug": "app-one",
+    "repositoryEnv": "APP_ONE_REPOSITORY",
+    "branchEnv": "APP_ONE_BRANCH",
+    "installCommandEnv": "APP_ONE_INSTALL_COMMAND",
+    "buildCommandEnv": "APP_ONE_BUILD_COMMAND"
+  },
+  {
+    "name": "Second app",
+    "description": "Open the second static web application.",
+    "slug": "app-two",
+    "repositoryEnv": "APP_TWO_REPOSITORY",
+    "branchEnv": "APP_TWO_BRANCH",
+    "installCommandEnv": "APP_TWO_INSTALL_COMMAND",
+    "buildCommandEnv": "APP_TWO_BUILD_COMMAND"
+  }
+]
