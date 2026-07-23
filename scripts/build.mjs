@@ -104,10 +104,8 @@ function renderCard(app, index) {
 
 async function renderIndex(apps) {
   const template = await readFile(path.join(sourceDirectory, "index.html"), "utf8");
-  const configuredCount = apps.filter((app) => app.configured).length;
   const html = template
     .replace("{{APP_CARDS}}", apps.map(renderCard).join("\n"))
-    .replace("{{APP_COUNT}}", String(configuredCount));
 
   await writeFile(path.join(outputDirectory, "index.html"), html);
   await cp(path.join(sourceDirectory, "styles.css"), path.join(outputDirectory, "styles.css"));
