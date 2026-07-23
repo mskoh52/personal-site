@@ -15,7 +15,7 @@
       "PUBLIC_DIR": "public",
       "SPA_FALLBACK": "0",
       "APP_ONE_REPOSITORY": "https://github.com/mskoh52/morse-trainer.git",
-      "APP_ONE_INSTALL_COMMAND": "'node build.js && mv dist/morse-trainer.html dist/index.html'",
+      "APP_ONE_INSTALL_COMMAND": "sh -c 'node build.js && mv dist/morse-trainer.html dist/index.html'",
       "APP_TWO_REPOSITORY": "https://github.com/mskoh52/arithmetic-practice.git"
     },
     "targets": {
